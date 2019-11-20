@@ -22,22 +22,30 @@ function monkey(){
     document.getElementById('monkeyking').innerText = monkey[0]
 }
 
-function stat(){
-    let str = document.getElementById("str").value
-    let obj = {}
-    // document.write(str.split("")+"<br>")直接用会清空上面的代码
-        for(let i=0;i<str.length;i++) {
-       var key=str[i];//str.charAt(i);
-        if(obj[key]){
-            obj[key]++;
-        }else{
-            obj[key] = 1;
-        }
-        // if(!obj[key]){
-        // obj[key] = 1;
-        // }else{
-        //     obj[key]++;
-        // }
-    }
+// function stat(){
+//     let str = document.getElementById("str").value
+//     let obj = {}
+    //  document.write(str.split("")+"<br>")
+     //直接用会清空上面的代码
+    //     for(let i=0;i<str.length;i++) {
+    //    var key=str[i];//str.charAt(i);
+    //     if(obj[key]){
+    //         obj[key]++;
+    //     }else{
+    //         obj[key] = 1;
+    //     }
+    //     if(!obj[key]){
+    //     obj[key] = 1;
+    //     }else{
+    //         obj[key]++;
+    //     }
+    // }
+    function stat() {
+        let str = document.getElementById("str").value
+        let arr = str.split('').sort()
+        obj = arr.reduce((pre, item) => {
+            pre[item] ? pre[item]++ : pre[item] = 1
+            return pre
+        }, {})
     document.getElementById('result').innerText = JSON.stringify(obj)
 }
