@@ -39,7 +39,7 @@ function monkey(){
     //     }else{
     //         obj[key]++;
     //     }
-    // }
+    // }   要手動排序
     function stat() {
         let str = document.getElementById("str").value
         let arr = str.split('').sort()
